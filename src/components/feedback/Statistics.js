@@ -1,10 +1,8 @@
 import PropTypes from 'prop-types';
 
 const Statistic = ({ good, neutral, bad, total, positivePercentage }) => {
-  {
-    if (good === 0 && neutral === 0 && bad === 0) {
-      return <p className="none-feedback">There is no feedback</p>;
-    }
+  if (good === 0 && neutral === 0 && bad === 0) {
+    return <p className="none-feedback">There is no feedback</p>;
   }
   return (
     <ul className="statistic__list">
