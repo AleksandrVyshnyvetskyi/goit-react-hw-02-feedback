@@ -1,4 +1,4 @@
-import React from 'react';
+import PropTypes from 'prop-types';
 import './feedback.css';
 
 const FeedbackOptions = ({
@@ -28,3 +28,9 @@ const FeedbackOptions = ({
 };
 
 export { FeedbackOptions };
+
+FeedbackOptions.propTypes = {
+  onGoodFeedback: PropTypes.func.isRequired,
+  onNeutralFeedback: PropTypes.func.isRequired,
+  onBadFeedback: PropTypes.func.isRequired,
+};
