@@ -24,11 +24,8 @@
     align-items: center;
 }
 
-.feedback__list--item {
-    margin: 10px;
-}
-
-.feedback__list--item button {
+.btn {
+    margin-top: 20px;
     font-size: 24px;
     padding: 15px;
     width: 150px;

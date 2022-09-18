@@ -11,23 +11,31 @@ class Feedback extends React.Component {
     bad: 0,
   };
 
-  addGoodFeedback = () => {
-    this.setState(prevState => ({
-      good: prevState.good + 1,
-    }));
+  handleAddFeedback = event => {
+    const key = event.target.name;
+    // console.log(key);
+    this.setState(prevState => {
+      return { [key]: prevState[key] + 1 };
+    });
   };
 
-  addNeutralFeedback = () => {
-    this.setState(prevState => ({
-      neutral: prevState.neutral + 1,
-    }));
-  };
+  // addGoodFeedback = () => {
+  //   this.setState(prevState => ({
+  //     good: prevState.good + 1,
+  //   }));
+  // };
 
-  addBadFeedback = () => {
-    this.setState(prevState => ({
-      bad: prevState.bad + 1,
-    }));
-  };
+  // addNeutralFeedback = () => {
+  //   this.setState(prevState => ({
+  //     neutral: prevState.neutral + 1,
+  //   }));
+  // };
+
+  // addBadFeedback = () => {
+  //   this.setState(prevState => ({
+  //     bad: prevState.bad + 1,
+  //   }));
+  // };
 
   countTotalFeedback() {
     const { good, neutral, bad } = this.state;
@@ -50,9 +58,8 @@ class Feedback extends React.Component {
       <div className="feedback">
         <Section title="Leave feedback please">
           <FeedbackOptions
-            onGoodFeedback={this.addGoodFeedback}
-            onNeutralFeedback={this.addNeutralFeedback}
-            onBadFeedback={this.addBadFeedback}
+            onAddFeedback={this.handleAddFeedback}
+            options={Object.keys(this.state)}
           />
         </Section>
         <Section title="Statistics">
