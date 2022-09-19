@@ -19,24 +19,6 @@ class Feedback extends React.Component {
     });
   };
 
-  // addGoodFeedback = () => {
-  //   this.setState(prevState => ({
-  //     good: prevState.good + 1,
-  //   }));
-  // };
-
-  // addNeutralFeedback = () => {
-  //   this.setState(prevState => ({
-  //     neutral: prevState.neutral + 1,
-  //   }));
-  // };
-
-  // addBadFeedback = () => {
-  //   this.setState(prevState => ({
-  //     bad: prevState.bad + 1,
-  //   }));
-  // };
-
   countTotalFeedback() {
     const { good, neutral, bad } = this.state;
     return good + neutral + bad;
